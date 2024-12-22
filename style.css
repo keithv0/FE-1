@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #161616;
+    color: rgb(255, 255, 255);
+}
+.nav-header{
+    margin: 30px auto 20px;
+    padding: 15px;
+    border: 1px solid #0000;
+    text-align: center;
+    width: 90%;
+    border-radius: 40px;
+    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+        var(--angle),
+        #070707,
+        #687aff
+      ) border-box;
+      animation: 10s rotate linear infinite;
+}
+.main{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    margin: 100px;
+    padding: 50px;
+    gap: 10px;
+}
+.sect-tambah-buku, .sect-cari-buku, .sect-blm-selesai, .sect-done{
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+/* form input */
+.sect-tambah-buku .input, .sect-cari-buku #searchBook{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* styling input form */
+#bookForm .input input, #searchBookTitle{
+    margin-top: 15px;
+    outline: none;
+    border-radius: 20px;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid black;
+    height: 35px;
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* ------------------ SECTION 1 -----------------  */
+
+.sect-tambah-buku{
+    grid-row: span 3;
+    height: 600px;
+    background: #116A7B;
+    color: #161616;
+}
+.sect-tambah-buku h2{
+    color: aliceblue;
+}
+
+#bookForm .input input{
+    color: whitesmoke;
+}
+#bookForm label{
+    color: yellow;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* centang */
+#bookFormIsComplete{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 70px;
+}
+/* input iscomplete */
+.input-chek{
+    margin-bottom: 20px;
+}
+#bookForm .input input::placeholder{
+    color: rgba(245, 245, 245, 0.704);
+}
+/* form submit section tambah buku */
+.sect-tambah-buku #bookFormSubmit{
+    width: 100%;
+    outline: none;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: transparent;
+    border: 0.5px solid black;
+    transition: 0.3s;
+    cursor: pointer;
+    letter-spacing: 1px;
+    color: aliceblue;
+    font-weight: 700;
+    font-size: large;
+}
+.sect-tambah-buku #bookFormSubmit:hover{
+    background-color: #003d6b;
+    color: #fcd105;
+}
+#bookFormIsComplete{
+    accent-color: #fbdb63;
+}
+
+/* ---------------- SECTION 2 / Search ----------------------- */
+.sect-cari-buku{
+    background-color: #b6f36a;
+    color: #161616;
+}
+/* id form */
+.sect-cari-buku #searchBook{
+    display: flex;
+    flex-direction: row;
+}
+/* input n button */
+#searchBookTitle, #searchSubmit{
+    margin-top: 30px;
+}
+.sect-cari-buku input{
+    width: 80%;    
+}
+.sect-cari-buku button{
+    width: 30%;
+    margin: auto;
+    outline: none;
+    color: black;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: transparent;
+    border: 0.5px solid black;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+#searchSubmit{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#searchSubmit:hover{
+    background-color: cornflowerblue;
+}
+
+/* SECTION 3 */
+.sect-blm-selesai{
+    background-color: #94dafb;
+    color: #161616;
+}
+
+/* SECTION 4 */
+.sect-done{
+    background-color: #fbdb63;
+    color: #161616;
+}
+
+/* DOM JS */
+.konten{
+    border: 1px solid green;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.button-container{
+    margin-top: 20px;
+}
+.undo-button, .trash-button, .check-button{
+    /* background-color: red; */
+    padding: 10px;
+    font-weight: 500;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-color: #1CD6CE;
+    cursor: pointer;
+}
+.trash-button {
+    background-color: #7900FF;
+}
+.check-button {
+    background-color: #fcd105;
+}
+
+.undo-button:hover, .trash-button:hover, .check-button:hover{
+    background-color: #FB3640;
+    transition: 0.3s;
+}
+
+.penulis-buku, .tahun-terbit, .status-cari{
+    font-weight: 500;
+}
+
+::-webkit-scrollbar{
+    width: 20px;
+}
+::-webkit-scrollbar-track{
+    border-radius: 20px;
+    background-color: #fcd105;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #003d6b;
+    border-radius: 80px;
+}
+
+/* nav header */
+@keyframes rotate {
+    to {
+        --angle:360deg;
+    }
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Responsive */
+@media only screen and (max-width:1650px) {
+    .main {
+        margin: 40px;
+        /* border: 1px solid yellow; */
+    }
+}
+@media only screen and (max-width:1300px) {
+    .main{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 50px 20px;
+        /* border: 1px solid yellow; */
+        
+    }
+}
+@media only screen and (max-width:1024px) {
+    .main {
+        /* border: 1px solid orange; */
+        margin: 50px 0;
+
+    }
+}
+
+/* @media only screen and (max-width:1024px) {
+    header{
+        width: 90%;
+        margin: 0 auto;
+    }
+    section{
+        width: 80%;
+        margin: 20px auto;
+    }
+} */
